@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%if title %}
+        <title>{{title}} Form</title>
+    {% else %}
+        <title>Form</title>
+    {% endif %}
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      {% block content %}
+      
+      {% endblock %}
+    </div>
+  </body>
+</html>
+

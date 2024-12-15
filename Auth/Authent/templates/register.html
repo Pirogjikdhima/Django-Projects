@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center" style="padding-bottom:20px ;">
+    <h1>Register</h1>
+    <form method="POST">
+      {% csrf_token %}
+    
+      <div class="txt_field">
+        {{ form.username }}
+        <span></span>
+        <label>Username</label>
+        {% for error in form.username.errors %}
+          <div class="error">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="txt_field">
+        {{ form.email }}
+        <span></span>
+        <label>E-mail</label>
+        {% for error in form.email.errors %}
+          <div class="error">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="txt_field">
+        {{ form.password1 }}
+        <span></span>
+        <label>Password</label>
+        {% for error in form.password1.errors %}
+          <div class="error">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="txt_field">
+        {{ form.password2 }}
+        <span></span>
+        <label>Confirm Password</label>
+        {% for error in form.password2.errors %}
+          <div class="error">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <input name="submit" type="Submit" value="Register">
+    </form>
+</div>
+{% endblock %}
